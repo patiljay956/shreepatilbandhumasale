@@ -55,7 +55,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- GEO & AEO Structured Data (JSON-LD) -->
-    <!-- This tells Google/AI exactly what you sell and answers common questions -->
     <script type="application/ld+json">
     [
         {
@@ -81,23 +80,23 @@
             },
             "priceRange": "₹₹",
             "founder": [
-                {
-                "@type": "Person",
-                "name": "Shree Yogesh S. Patil"
-                },
-                {
-                "@type": "Person",
-                "name": "Yash M. Patil"
-                }
+                { "@type": "Person", "name": "Shree Yogesh S. Patil" },
+                { "@type": "Person", "name": "Yash M. Patil" }
             ],
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
                 "reviewCount": "124"
             },
-            "sameAs": [
-                "https://wa.me/918483080888"
-            ]
+            "sameAs": [ "https://wa.me/918483080888" ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["#story-text", ".faq-answer"]
+            }
         },
         {
             "@context": "https://schema.org",
@@ -118,33 +117,16 @@
                         "@type": "Answer",
                         "text": "Yes, Shree Patil Bandhu Masale is a distinct, emerging brand founded by Yogesh Patil and Yash Patil, focusing on 100% natural and homemade Maharashtrian spices."
                     }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Do you sell Malvani and Agri Koli Masala?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, we specialize in authentic regional blends including Special Malvani Masala, Agri Koli Masala, and Gavran Chicken Masala."
-                    }
                 }
             ]
         },
         {
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": "Special Malvani Masala",
-            "image": "https://shreepatilbandhumasale.vercel.app/images/malvani.jpg",
-            "description": "Authentic homemade Malvani Masala from Konkan region.",
-            "brand": {
-                "@type": "Brand",
-                "name": "Shree Patil Bandhu Masale"
-            },
-            "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "INR",
-                "price": "350"
-            }
+            "name": "Shree Patil Bandhu Spices Collection",
+            "description": "Authentic homemade spices including Malvani, Agri Koli, and Chicken Masala.",
+            "brand": { "@type": "Brand", "name": "Shree Patil Bandhu Masale" },
+            "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "INR", "price": "350" }
         }
     ]
     </script>
@@ -193,11 +175,21 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        /* Button Active State */
         .filter-btn.active {
             background-color: #8B0000;
             color: white;
             border-color: #8B0000;
+        }
+
+        /* Table Styles for Comparison */
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #fff;
         }
     </style>
 </head>
@@ -207,7 +199,6 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-3 bg-white/90 backdrop-blur-md shadow-md">
         <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
-            <!-- Logo Area -->
             <a href="#" class="flex items-center gap-2 group" aria-label="Shree Patil Bandhu Masale Home">
                 <div
                     class="w-10 h-10 bg-brand-red rounded-full flex items-center justify-center text-white text-xl shadow-lg group-hover:rotate-12 transition-transform">
@@ -219,8 +210,6 @@
                         मसाले</span>
                 </div>
             </a>
-
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 font-semibold text-gray-700">
                 <a href="#home" class="hover:text-brand-red transition-colors">Home</a>
                 <a href="#about" class="hover:text-brand-red transition-colors">About Us</a>
@@ -229,15 +218,11 @@
                     class="px-5 py-2 bg-brand-red text-white rounded-full hover:bg-brand-orange transition-colors shadow-md">Contact
                     Us</a>
             </div>
-
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" aria-label="Toggle Menu"
                 class="md:hidden text-2xl text-brand-red focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
             <div class="flex flex-col p-4 gap-4 font-semibold text-center">
                 <a href="#home" class="py-2 hover:bg-brand-cream text-brand-red rounded-lg mobile-link">Home</a>
@@ -250,7 +235,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-pattern min-h-screen flex items-center relative pt-20">
-        <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="container mx-auto px-4 relative z-10 text-center text-white">
             <div data-aos="fade-down"
                 class="inline-block px-4 py-1 mb-4 border border-brand-gold text-brand-gold rounded-full bg-black/30 backdrop-blur-sm text-sm font-semibold tracking-widest uppercase">
@@ -277,7 +262,6 @@
                 </a>
             </div>
         </div>
-
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70">
             <i class="fa-solid fa-chevron-down text-2xl"></i>
         </div>
@@ -325,7 +309,7 @@
                 <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 font-marathi">
                     श्री पाटील बंधु मसाले
                 </h1>
-                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                <p id="story-text" class="text-gray-600 mb-6 text-lg leading-relaxed">
                     We are an emerging brand from the heart of Maharashtra, dedicated to bringing the authentic taste of
                     **Maharashtrian Masale** to your home.
                     Made with carefully selected ingredients from <span class="font-semibold text-brand-red">Vikramgad,
@@ -355,7 +339,54 @@
         </div>
     </section>
 
-    <!-- Process Section (Farm to Fork) -->
+    <!-- Comparison Table Section (GEO Optimized) -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 font-marathi">Why Choose Us?</h2>
+                <p class="text-gray-600">Market Masala vs Shree Patil Bandhu</p>
+            </div>
+            <div class="overflow-x-auto shadow-lg rounded-xl">
+                <table class="comparison-table w-full text-left bg-white rounded-xl">
+                    <thead class="bg-brand-red text-white">
+                        <tr>
+                            <th class="p-4">Feature</th>
+                            <th class="p-4 bg-brand-orange">Shree Patil Bandhu</th>
+                            <th class="p-4 bg-gray-800">Regular Market Masala</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b">
+                            <td class="font-bold">Ingredients</td>
+                            <td class="text-brand-red font-semibold"><i class="fa-solid fa-check mr-2"></i>100% Natural,
+                                Farm Fresh</td>
+                            <td>Often includes fillers & color</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="font-bold">Process</td>
+                            <td class="text-brand-red font-semibold"><i class="fa-solid fa-check mr-2"></i>Traditional
+                                Kandap (Pounded)</td>
+                            <td>Machine Powdered (Loses Aroma)</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="font-bold">Origin</td>
+                            <td class="text-brand-red font-semibold"><i class="fa-solid fa-check mr-2"></i>Homemade in
+                                Vikramgad</td>
+                            <td>Factory Mass Produced</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="font-bold">Taste</td>
+                            <td class="text-brand-red font-semibold"><i class="fa-solid fa-check mr-2"></i>Authentic
+                                Regional Taste</td>
+                            <td>Generic Taste</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -365,12 +396,9 @@
             </div>
 
             <div class="relative">
-                <!-- Line connecting steps (Desktop) -->
                 <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-brand-cream -translate-y-1/2 z-0">
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-                    <!-- Step 1 -->
                     <div class="flex flex-col items-center text-center bg-white p-4" data-aos="fade-up"
                         data-aos-delay="0">
                         <div
@@ -380,8 +408,6 @@
                         <h4 class="font-bold text-xl mb-2">Sourcing</h4>
                         <p class="text-sm text-gray-600">Directly from farmers in Vikramgad & Palghar.</p>
                     </div>
-
-                    <!-- Step 2 -->
                     <div class="flex flex-col items-center text-center bg-white p-4" data-aos="fade-up"
                         data-aos-delay="200">
                         <div
@@ -391,8 +417,6 @@
                         <h4 class="font-bold text-xl mb-2">Sun Drying</h4>
                         <p class="text-sm text-gray-600">Natural drying to preserve essential oils.</p>
                     </div>
-
-                    <!-- Step 3 -->
                     <div class="flex flex-col items-center text-center bg-white p-4" data-aos="fade-up"
                         data-aos-delay="400">
                         <div
@@ -402,8 +426,6 @@
                         <h4 class="font-bold text-xl mb-2">Pounding</h4>
                         <p class="text-sm text-gray-600">Traditional Kandap method for authentic texture.</p>
                     </div>
-
-                    <!-- Step 4 -->
                     <div class="flex flex-col items-center text-center bg-white p-4" data-aos="fade-up"
                         data-aos-delay="600">
                         <div
@@ -418,7 +440,7 @@
         </div>
     </section>
 
-    <!-- Stats / Impact Section -->
+    <!-- Stats Section -->
     <section class="stats-section py-16 bg-brand-red text-white relative overflow-hidden">
         <div
             class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
@@ -431,23 +453,18 @@
             <div
                 class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
                 <div class="p-6">
-                    <div class="flex justify-center items-baseline text-5xl font-bold text-brand-yellow mb-2">
-                        <span class="count-up" data-target="100">0</span>
-                        <span class="text-2xl ml-1">kg+</span>
-                    </div>
+                    <div class="flex justify-center items-baseline text-5xl font-bold text-brand-yellow mb-2"><span
+                            class="count-up" data-target="100">0</span><span class="text-2xl ml-1">kg+</span></div>
                     <p class="text-brand-cream text-lg font-semibold">Total Sold (This Week)</p>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-center items-baseline text-5xl font-bold text-brand-yellow mb-2">
-                        <span class="count-up" data-target="14">0</span>
-                    </div>
+                    <div class="flex justify-center items-baseline text-5xl font-bold text-brand-yellow mb-2"><span
+                            class="count-up" data-target="14">0</span></div>
                     <p class="text-brand-cream text-lg font-semibold">Masale Varieties Sold</p>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-center items-baseline text-5xl font-bold text-brand-yellow mb-2">
-                        <span class="count-up" data-target="17">0</span>
-                        <span class="text-2xl ml-1">+</span>
-                    </div>
+                    <div class="flex justify-center items-baseline text-5xl font-bold text-brand-yellow mb-2"><span
+                            class="count-up" data-target="17">0</span><span class="text-2xl ml-1">+</span></div>
                     <p class="text-brand-cream text-lg font-semibold">Towns Reached</p>
                 </div>
             </div>
@@ -462,62 +479,50 @@
                 <h2 class="text-4xl font-bold text-gray-900 mt-2 font-marathi">आमच्या मसाल्यांच्या रेसिपी</h2>
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Recipe 1 -->
                 <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
                     data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=2070&auto=format&fit=crop"
+                    <div class="h-48 overflow-hidden"><img
+                            src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=2070&auto=format&fit=crop"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            alt="Malvani Chicken Sukka">
-                    </div>
+                            alt="Malvani Chicken Sukka"></div>
                     <div class="p-6">
                         <span class="text-xs font-bold text-brand-orange bg-orange-50 px-2 py-1 rounded">Non-Veg</span>
                         <h3 class="text-xl font-bold mt-2 font-marathi">Malvani Chicken Sukka</h3>
                         <p class="text-gray-600 text-sm mt-2 mb-4">A dry chicken dish made with fresh coconut and our
                             spicy masala.</p>
-                        <div class="flex items-center gap-2 text-sm font-semibold text-brand-red">
-                            <i class="fa-solid fa-spoon"></i> Use: Special Malvani Masala
-                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-brand-red"><i
+                                class="fa-solid fa-spoon"></i> Use: Special Malvani Masala</div>
                     </div>
                 </div>
-
-                <!-- Recipe 2 -->
                 <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1626509683526-2cb3a9069d31?q=80&w=1974&auto=format&fit=crop"
+                    <div class="h-48 overflow-hidden"><img
+                            src="https://images.unsplash.com/photo-1626509683526-2cb3a9069d31?q=80&w=1974&auto=format&fit=crop"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            alt="Agri Koli Fish Fry">
-                    </div>
+                            alt="Agri Koli Fish Fry"></div>
                     <div class="p-6">
                         <span class="text-xs font-bold text-brand-orange bg-orange-50 px-2 py-1 rounded">Seafood</span>
                         <h3 class="text-xl font-bold mt-2 font-marathi">Agri Koli Fish Fry</h3>
                         <p class="text-gray-600 text-sm mt-2 mb-4">Crispy fried fish coated with authentic spices from
                             the coastal belt.</p>
-                        <div class="flex items-center gap-2 text-sm font-semibold text-brand-red">
-                            <i class="fa-solid fa-spoon"></i> Use: Agri Koli Masala
-                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-brand-red"><i
+                                class="fa-solid fa-spoon"></i> Use: Agri Koli Masala</div>
                     </div>
                 </div>
-
-                <!-- Recipe 3 -->
                 <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356f36?q=80&w=2070&auto=format&fit=crop"
+                    <div class="h-48 overflow-hidden"><img
+                            src="https://images.unsplash.com/photo-1585937421612-70a008356f36?q=80&w=2070&auto=format&fit=crop"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            alt="Veg Kolhapuri">
-                    </div>
+                            alt="Veg Kolhapuri"></div>
                     <div class="p-6">
                         <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Veg</span>
                         <h3 class="text-xl font-bold mt-2 font-marathi">Spicy Veg Kolhapuri</h3>
                         <p class="text-gray-600 text-sm mt-2 mb-4">A mixed vegetable curry with a thick, spicy, and
                             aromatic gravy.</p>
-                        <div class="flex items-center gap-2 text-sm font-semibold text-brand-red">
-                            <i class="fa-solid fa-spoon"></i> Use: Kitchen King / Garam Masala
-                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-brand-red"><i
+                                class="fa-solid fa-spoon"></i> Use: Kitchen King / Garam Masala</div>
                     </div>
                 </div>
             </div>
@@ -528,15 +533,12 @@
     <section id="products" class="py-20 bg-brand-cream relative">
         <div class="absolute top-0 right-0 w-64 h-64 bg-brand-yellow opacity-10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-red opacity-10 rounded-full blur-3xl"></div>
-
         <div class="container mx-auto px-4 md:px-8 relative z-10">
             <div class="text-center mb-10" data-aos="fade-up">
                 <span class="text-brand-red font-bold tracking-wider uppercase text-sm">Our Collection</span>
                 <h2 class="text-4xl font-bold text-gray-900 mt-2 font-marathi">आमचे खास मसाले</h2>
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
             </div>
-
-            <!-- Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
                 <button onclick="filterProducts('all')"
                     class="filter-btn active px-6 py-2 rounded-full border border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-all">All</button>
@@ -549,36 +551,63 @@
                     class="filter-btn px-6 py-2 rounded-full border border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-all">Daily
                     Use</button>
             </div>
-
-            <!-- Product Grid -->
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
-                <!-- Products will be injected here by JS -->
-            </div>
-
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]"></div>
             <div class="text-center mt-12" data-aos="fade-up">
                 <p class="text-gray-600 mb-4">आणि इतर मसाले उपलब्ध आहेत (And many more spices available)</p>
                 <a href="https://wa.me/918483080888?text=Send%20me%20full%20product%20list"
                     aria-label="Request product list"
-                    class="inline-flex items-center gap-2 text-brand-red font-bold hover:underline">
-                    Get Full Product List <i class="fa-solid fa-list"></i>
-                </a>
+                    class="inline-flex items-center gap-2 text-brand-red font-bold hover:underline">Get Full Product
+                    List <i class="fa-solid fa-list"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section (AEO Optimized) -->
+    <!-- Customer Reviews Section (Social Proof for SEO) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900 font-marathi">ग्राहकांचे अनुभव (Reviews)</h2>
+                <div class="flex justify-center text-yellow-500 text-xl mt-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-gray-500">4.9/5 Rating from 120+ Customers</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 shadow-sm" data-aos="fade-up">
+                    <p class="text-gray-600 italic mb-4">"The Malvani Masala is exactly like my grandmother used to
+                        make. Authentic Konkani taste!"</p>
+                    <div class="font-bold text-brand-red">- Rajesh M., Thane</div>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 shadow-sm" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <p class="text-gray-600 italic mb-4">"Best Chicken Masala I have used. The curry color was perfect
+                        red and spicy."</p>
+                    <div class="font-bold text-brand-red">- Priya S., Mumbai</div>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 shadow-sm" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <p class="text-gray-600 italic mb-4">"Ordered via WhatsApp. Delivery was fast and packing was
+                        excellent. Aroma is very strong!"</p>
+                    <div class="font-bold text-brand-red">- Amit K., Nashik</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-900 font-marathi">सतत विचारले जाणारे प्रश्न (FAQ)</h2>
             </div>
             <div class="space-y-4">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 faq-answer" data-aos="fade-up">
                     <h3 class="font-bold text-lg text-brand-red mb-2">Are your spices 100% natural?</h3>
                     <p class="text-gray-600">Yes, Shree Patil Bandhu Masale guarantees 100% natural ingredients with no
                         artificial colors or preservatives. We make them homemade in Vikramgad.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up"
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 faq-answer" data-aos="fade-up"
                     data-aos-delay="100">
                     <h3 class="font-bold text-lg text-brand-red mb-2">Is this different from other Patil Bandhu brands?
                     </h3>
@@ -626,13 +655,10 @@
     <section id="contact" class="py-20 px-4">
         <div class="container mx-auto max-w-6xl">
             <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-
-                <!-- Contact Info -->
                 <div class="md:w-1/2 p-8 md:p-12 bg-gray-50">
                     <h2 class="text-3xl font-bold text-brand-red mb-2">संपर्क करा (Contact Us)</h2>
                     <p class="text-gray-600 mb-8">We are located in the green hills of Vikramgad. Visit us or call for
                         orders.</p>
-
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <div
@@ -644,7 +670,6 @@
                                 <p class="text-gray-600">देहेर्जे, ता. विक्रमगड, जि. पालघर 401403</p>
                             </div>
                         </div>
-
                         <div class="flex items-start gap-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center flex-shrink-0">
@@ -652,25 +677,22 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800">Phone Numbers</h4>
-                                <div class="flex flex-col gap-1 text-gray-600 font-mono">
-                                    <a href="tel:9270312245" class="hover:text-brand-red">9270312245</a>
-                                    <a href="tel:9270322245" class="hover:text-brand-red">9270322245</a>
-                                </div>
+                                <div class="flex flex-col gap-1 text-gray-600 font-mono"><a href="tel:9270312245"
+                                        class="hover:text-brand-red">9270312245</a><a href="tel:9270322244"
+                                        class="hover:text-brand-red">9270322244</a></div>
                             </div>
                         </div>
-
                         <div class="flex items-start gap-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-brand-gold text-white flex items-center justify-center flex-shrink-0">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800">Email</h4>
-                                <a href="mailto:shreepatilbandhumasale@gmail.com"
+                                <h4 class="font-bold text-gray-800">Email</h4><a
+                                    href="mailto:shreepatilbandhumasale@gmail.com"
                                     class="text-gray-600 font-mono break-all hover:text-brand-red">shreepatilbandhumasale@gmail.com</a>
                             </div>
                         </div>
-
                         <div class="flex items-start gap-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0">
@@ -678,22 +700,19 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800">Quick Order</h4>
-                                <p class="text-gray-600">Click below to message us</p>
-                                <a href="https://wa.me/918483080888?text=Hii" aria-label="Chat on WhatsApp"
+                                <p class="text-gray-600">Click below to message us</p><a
+                                    href="https://wa.me/918483080888?text=Hii" aria-label="Chat on WhatsApp"
                                     class="text-green-600 font-bold hover:underline">Chat on WhatsApp</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Map -->
                 <div class="md:w-1/2 bg-gray-200 h-64 md:h-auto relative">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d677.5692439339092!2d73.05540529701273!3d19.772405656445034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7136c8deebc3b%3A0xe67fcae468034098!2sDeharje%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1768122674850!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         class="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-500"
-                        title="Shree Patil Bandhu Masale Location in Vikramgad">
-                    </iframe>
+                        title="Shree Patil Bandhu Masale Location in Vikramgad"></iframe>
                 </div>
             </div>
         </div>
@@ -706,93 +725,51 @@
                 <div class="text-center md:text-left">
                     <h3 class="text-2xl font-bold text-brand-gold font-marathi">श्री पाटील बंधु मसाले</h3>
                     <p class="text-gray-400 text-sm mt-1">Authentic Maharashtrian Taste</p>
-                    <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
-                        <i class="fa-solid fa-certificate text-brand-gold"></i>
-                        <span>FSSAI License Applied</span>
-                    </div>
-
-                    <!-- QR Code Section (Commented) -->
-                    <!--
-                    <div class="mt-6 flex flex-col md:flex-row items-center gap-4 bg-gray-800 p-3 rounded-lg border border-gray-700">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://shreepatilbandhumasale.com/&color=D35400" alt="Scan to Order" class="w-16 h-16 bg-white p-1 rounded">
-                        <div class="text-left">
-                            <p class="text-xs text-brand-gold font-bold uppercase">Scan to Order</p>
-                            <p class="text-[10px] text-gray-400">Scan this code to visit our website<br>and order fresh spices.</p>
-                        </div>
-                    </div>
-                    -->
-
+                    <div class="mt-4 flex items-center gap-2 text-xs text-gray-500"><i
+                            class="fa-solid fa-certificate text-brand-gold"></i><span>FSSAI License Applied</span></div>
                 </div>
                 <div class="flex gap-4">
                     <a href="#" aria-label="Facebook"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition-colors">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition-colors"><i
+                            class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition-colors">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
                     <a href="mailto:shreepatilbandhumasale@gmail.com" aria-label="Email Us"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition-colors">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition-colors"><i
+                            class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
             <hr class="border-gray-800 my-8">
-            <p class="text-center text-gray-500 text-xs">
-                &copy; 2026 Shree Patil Bandhu Masale. All rights reserved. <br>
-                Designed for Mobile & Performance.
+            <p class="text-center text-gray-500 text-xs">&copy; 2026 Shree Patil Bandhu Masale. All rights reserved.
+                <br> Designed for Mobile & Performance.
             </p>
         </div>
     </footer>
 
-    <!-- Fixed Bottom Call Button (Mobile Only) -->
     <div class="fixed bottom-4 right-4 z-50 md:hidden flex flex-col gap-3">
         <a href="https://wa.me/918483080888?text=Hii" aria-label="WhatsApp Us"
-            class="w-14 h-14 bg-green-500 rounded-full text-white flex items-center justify-center shadow-lg animate-pulse hover:scale-110 transition-transform">
-            <i class="fa-brands fa-whatsapp text-2xl"></i>
-        </a>
+            class="w-14 h-14 bg-green-500 rounded-full text-white flex items-center justify-center shadow-lg animate-pulse hover:scale-110 transition-transform"><i
+                class="fa-brands fa-whatsapp text-2xl"></i></a>
         <a href="tel:8483080888" aria-label="Call Us"
-            class="w-14 h-14 bg-brand-red rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-            <i class="fa-solid fa-phone text-2xl"></i>
-        </a>
+            class="w-14 h-14 bg-brand-red rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"><i
+                class="fa-solid fa-phone text-2xl"></i></a>
     </div>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-
+        AOS.init({ duration: 800, once: true, offset: 100 });
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const links = document.querySelectorAll('.mobile-link');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        links.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg', 'py-2');
-                nav.classList.remove('py-3');
-            } else {
-                nav.classList.remove('shadow-lg', 'py-2');
-                nav.classList.add('py-3');
-            }
+            if (window.scrollY > 50) { nav.classList.add('shadow-lg', 'py-2'); nav.classList.remove('py-3'); }
+            else { nav.classList.remove('shadow-lg', 'py-2'); nav.classList.add('py-3'); }
         });
 
-        // --- Product Filtering Logic ---
         const productsData = [
             { name: "Special Malvani Masala", marathi: "स्पेशल मालवणी मसाला", icon: "fa-bowl-food", color: "text-red-600", category: "special" },
             { name: "Agri Koli Masala", marathi: "आग्री कोळी मसाला", icon: "fa-pepper-hot", color: "text-orange-600", category: "special" },
@@ -811,61 +788,35 @@
         function renderProducts(filter) {
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
-
-            const filtered = filter === 'all'
-                ? productsData
-                : productsData.filter(p => p.category === filter);
-
-            // Animate items out (optional) then render new ones
-            filtered.forEach((p, index) => {
+            const filtered = filter === 'all' ? productsData : productsData.filter(p => p.category === filter);
+            filtered.forEach((p) => {
                 const card = document.createElement('div');
                 card.className = `product-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center group`;
                 card.setAttribute('data-aos', 'fade-up');
                 card.innerHTML = `
-                    <div class="w-20 h-20 rounded-full bg-brand-cream flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid ${p.icon} text-3xl ${p.color}"></i>
-                    </div>
+                    <div class="w-20 h-20 rounded-full bg-brand-cream flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid ${p.icon} text-3xl ${p.color}"></i></div>
                     <h3 class="font-bold text-lg text-gray-800 font-marathi">${p.marathi}</h3>
                     <p class="text-sm text-gray-500 font-medium mb-4">${p.name}</p>
-                    <a href="https://wa.me/918483080888?text=Hii,%20I%20want%20to%20buy%20${p.name}" target="_blank" aria-label="Buy ${p.name} on WhatsApp" class="mt-auto w-full py-2 border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-all text-sm font-semibold">
-                        Order Now
-                    </a>
+                    <a href="https://wa.me/918483080888?text=Hii,%20I%20want%20to%20buy%20${p.name}" target="_blank" aria-label="Buy ${p.name} on WhatsApp" class="mt-auto w-full py-2 border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-all text-sm font-semibold">Order Now</a>
                 `;
                 grid.appendChild(card);
             });
         }
-
         function filterProducts(category) {
-            // Update Active Button Style
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'All')) {
-                    btn.classList.add('active');
-                }
+                if (btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'All')) { btn.classList.add('active'); }
             });
-
-            // Hack for button finding logic above - simple reset
             if (category === 'special') buttons[1].classList.add('active');
             if (category === 'non-veg') buttons[2].classList.add('active');
             if (category === 'daily') buttons[3].classList.add('active');
             if (category === 'all') buttons[0].classList.add('active');
-
-
             renderProducts(category);
         }
-
-        // Initial Render
         renderProducts('all');
 
-
-        // Stats Animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
         const statsObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -874,16 +825,11 @@
                         const target = +counter.getAttribute('data-target');
                         const duration = 2000;
                         const increment = target / (duration / 16);
-
                         let current = 0;
                         const updateCounter = () => {
                             current += increment;
-                            if (current < target) {
-                                counter.innerText = Math.ceil(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.innerText = target;
-                            }
+                            if (current < target) { counter.innerText = Math.ceil(current); requestAnimationFrame(updateCounter); }
+                            else { counter.innerText = target; }
                         };
                         updateCounter();
                     });
@@ -891,11 +837,8 @@
                 }
             });
         }, observerOptions);
-
         const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
+        if (statsSection) { statsObserver.observe(statsSection); }
     </script>
 </body>
 
