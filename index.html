@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" style="scroll-padding-top: 100px;">
 
 <head>
     <meta charset="UTF-8">
@@ -65,7 +65,7 @@
             "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
             "telephone": "+918483080888",
             "email": "shreepatilbandhumasale@gmail.com",
-            "url": "https://shreepatilbandhumasale.com/",
+            "url": "https://shreepatilbandhumasale.vercel.app/",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Deherje",
@@ -90,6 +90,11 @@
                 "name": "Yash M. Patil"
                 }
             ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "124"
+            },
             "sameAs": [
                 "https://wa.me/918483080888"
             ]
@@ -128,7 +133,7 @@
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "Special Malvani Masala",
-            "image": "https://shreepatilbandhumasale.com/images/malvani.jpg",
+            "image": "https://shreepatilbandhumasale.vercel.app/images/malvani.jpg",
             "description": "Authentic homemade Malvani Masala from Konkan region.",
             "brand": {
                 "@type": "Brand",
@@ -186,6 +191,13 @@
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Button Active State */
+        .filter-btn.active {
+            background-color: #8B0000;
+            color: white;
+            border-color: #8B0000;
         }
     </style>
 </head>
@@ -443,7 +455,7 @@
     </section>
 
     <!-- Recipes Section -->
-    <!-- <section class="py-20 bg-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-brand-red font-bold tracking-wider uppercase text-sm">Cook with Us</span>
@@ -451,9 +463,9 @@
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
-    <!-- Recipe 1 -->
-    <!-- <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Recipe 1 -->
+                <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
                     data-aos="fade-up" data-aos-delay="0">
                     <div class="h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=2070&auto=format&fit=crop"
@@ -469,10 +481,10 @@
                             <i class="fa-solid fa-spoon"></i> Use: Special Malvani Masala
                         </div>
                     </div>
-                </div> -->
+                </div>
 
-    <!-- Recipe 2 -->
-    <!-- <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
+                <!-- Recipe 2 -->
+                <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1626509683526-2cb3a9069d31?q=80&w=1974&auto=format&fit=crop"
@@ -488,10 +500,10 @@
                             <i class="fa-solid fa-spoon"></i> Use: Agri Koli Masala
                         </div>
                     </div>
-                </div> -->
+                </div>
 
-    <!-- Recipe 3 -->
-    <!-- <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
+                <!-- Recipe 3 -->
+                <div class="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all"
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1585937421612-70a008356f36?q=80&w=2070&auto=format&fit=crop"
@@ -510,9 +522,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
-
-
+    </section>
 
     <!-- Products Section -->
     <section id="products" class="py-20 bg-brand-cream relative">
@@ -520,43 +530,29 @@
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-red opacity-10 rounded-full blur-3xl"></div>
 
         <div class="container mx-auto px-4 md:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-10" data-aos="fade-up">
                 <span class="text-brand-red font-bold tracking-wider uppercase text-sm">Our Collection</span>
                 <h2 class="text-4xl font-bold text-gray-900 mt-2 font-marathi">आमचे खास मसाले</h2>
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Product Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <script>
-                    const products = [
-                        { name: "Special Malvani Masala", marathi: "स्पेशल मालवणी मसाला", icon: "fa-bowl-food", color: "text-red-600" },
-                        { name: "Agri Koli Masala", marathi: "आग्री कोळी मसाला", icon: "fa-pepper-hot", color: "text-orange-600" },
-                        { name: "Garam Masala", marathi: "गरम मसाला", icon: "fa-fire", color: "text-brand-red" },
-                        { name: "Chicken Masala", marathi: "चिकन मसाला", icon: "fa-drumstick-bite", color: "text-red-700" },
-                        { name: "Mutton Masala", marathi: "मटण मसाला", icon: "fa-bone", color: "text-red-800" },
-                        { name: "Biryani Masala", marathi: "बिर्याणी मसाला", icon: "fa-utensils", color: "text-yellow-600" },
-                        { name: "Fish Fry / Curry", marathi: "फिश फ्राय / करी", icon: "fa-fish", color: "text-blue-500" },
-                        { name: "Turmeric Powder", marathi: "हळद पावडर", icon: "fa-sun", color: "text-yellow-500" },
-                        { name: "Chili Powder", marathi: "मिरची पावडर", icon: "fa-pepper-hot", color: "text-red-600" },
-                        { name: "Coriander Powder", marathi: "धना पावडर", icon: "fa-leaf", color: "text-green-600" },
-                        { name: "Kitchen King", marathi: "किचन किंग", icon: "fa-crown", color: "text-purple-600" },
-                        { name: "Chicken 65 / Tikka", marathi: "चिकन 65 / टीका", icon: "fa-fire-burner", color: "text-orange-500" },
-                    ];
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
+                <button onclick="filterProducts('all')"
+                    class="filter-btn active px-6 py-2 rounded-full border border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-all">All</button>
+                <button onclick="filterProducts('special')"
+                    class="filter-btn px-6 py-2 rounded-full border border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-all">Special
+                    Blends</button>
+                <button onclick="filterProducts('non-veg')"
+                    class="filter-btn px-6 py-2 rounded-full border border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-all">Non-Veg</button>
+                <button onclick="filterProducts('daily')"
+                    class="filter-btn px-6 py-2 rounded-full border border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-all">Daily
+                    Use</button>
+            </div>
 
-                    document.write(products.map((p, index) => `
-                        <div class="product-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center group" data-aos="fade-up" data-aos-delay="${index * 50}">
-                            <div class="w-20 h-20 rounded-full bg-brand-cream flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid ${p.icon} text-3xl ${p.color}"></i>
-                            </div>
-                            <h3 class="font-bold text-lg text-gray-800 font-marathi">${p.marathi}</h3>
-                            <p class="text-sm text-gray-500 font-medium mb-4">${p.name}</p>
-                            <a href="https://wa.me/918483080888?text=Hii,%20I%20want%20to%20buy%20${p.name}" target="_blank" aria-label="Buy ${p.name} on WhatsApp" class="mt-auto w-full py-2 border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-all text-sm font-semibold">
-                                Order Now
-                            </a>
-                        </div>
-                    `).join(''));
-                </script>
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
+                <!-- Products will be injected here by JS -->
             </div>
 
             <div class="text-center mt-12" data-aos="fade-up">
@@ -710,6 +706,10 @@
                 <div class="text-center md:text-left">
                     <h3 class="text-2xl font-bold text-brand-gold font-marathi">श्री पाटील बंधु मसाले</h3>
                     <p class="text-gray-400 text-sm mt-1">Authentic Maharashtrian Taste</p>
+                    <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                        <i class="fa-solid fa-certificate text-brand-gold"></i>
+                        <span>FSSAI License Applied</span>
+                    </div>
 
                     <!-- QR Code Section (Commented) -->
                     <!--
@@ -792,6 +792,74 @@
             }
         });
 
+        // --- Product Filtering Logic ---
+        const productsData = [
+            { name: "Special Malvani Masala", marathi: "स्पेशल मालवणी मसाला", icon: "fa-bowl-food", color: "text-red-600", category: "special" },
+            { name: "Agri Koli Masala", marathi: "आग्री कोळी मसाला", icon: "fa-pepper-hot", color: "text-orange-600", category: "special" },
+            { name: "Garam Masala", marathi: "गरम मसाला", icon: "fa-fire", color: "text-brand-red", category: "daily" },
+            { name: "Chicken Masala", marathi: "चिकन मसाला", icon: "fa-drumstick-bite", color: "text-red-700", category: "non-veg" },
+            { name: "Mutton Masala", marathi: "मटण मसाला", icon: "fa-bone", color: "text-red-800", category: "non-veg" },
+            { name: "Biryani Masala", marathi: "बिर्याणी मसाला", icon: "fa-utensils", color: "text-yellow-600", category: "special" },
+            { name: "Fish Fry / Curry", marathi: "फिश फ्राय / करी", icon: "fa-fish", color: "text-blue-500", category: "non-veg" },
+            { name: "Turmeric Powder", marathi: "हळद पावडर", icon: "fa-sun", color: "text-yellow-500", category: "daily" },
+            { name: "Chili Powder", marathi: "मिरची पावडर", icon: "fa-pepper-hot", color: "text-red-600", category: "daily" },
+            { name: "Coriander Powder", marathi: "धना पावडर", icon: "fa-leaf", color: "text-green-600", category: "daily" },
+            { name: "Kitchen King", marathi: "किचन किंग", icon: "fa-crown", color: "text-purple-600", category: "daily" },
+            { name: "Chicken 65 / Tikka", marathi: "चिकन 65 / टीका", icon: "fa-fire-burner", color: "text-orange-500", category: "non-veg" },
+        ];
+
+        function renderProducts(filter) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all'
+                ? productsData
+                : productsData.filter(p => p.category === filter);
+
+            // Animate items out (optional) then render new ones
+            filtered.forEach((p, index) => {
+                const card = document.createElement('div');
+                card.className = `product-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center group`;
+                card.setAttribute('data-aos', 'fade-up');
+                card.innerHTML = `
+                    <div class="w-20 h-20 rounded-full bg-brand-cream flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid ${p.icon} text-3xl ${p.color}"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 font-marathi">${p.marathi}</h3>
+                    <p class="text-sm text-gray-500 font-medium mb-4">${p.name}</p>
+                    <a href="https://wa.me/918483080888?text=Hii,%20I%20want%20to%20buy%20${p.name}" target="_blank" aria-label="Buy ${p.name} on WhatsApp" class="mt-auto w-full py-2 border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-all text-sm font-semibold">
+                        Order Now
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts(category) {
+            // Update Active Button Style
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'All')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Hack for button finding logic above - simple reset
+            if (category === 'special') buttons[1].classList.add('active');
+            if (category === 'non-veg') buttons[2].classList.add('active');
+            if (category === 'daily') buttons[3].classList.add('active');
+            if (category === 'all') buttons[0].classList.add('active');
+
+
+            renderProducts(category);
+        }
+
+        // Initial Render
+        renderProducts('all');
+
+
+        // Stats Animation
         const observerOptions = {
             root: null,
             rootMargin: '0px',
